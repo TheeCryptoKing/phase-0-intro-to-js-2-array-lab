@@ -1,16 +1,16 @@
 // Write your solution here!
 
-const cats = ["Milo", "Otis", "Garfield"];
+const cats = ["Milo", "Otis", "Garfield"];// origin Array
 
 
-function arrayFunctions(){   //Unknown if we suppose to have this here 
+function arrayFunctions(){   
 beforeEach(function() {
       cats.length = 0;
 
       cats.push('Milo', 'Otis', 'Garfield');
     });
 }
-
+// self explanotory
 function destructivelyAppendCat() {
     cats.push("Ralph");
 }
@@ -24,39 +24,33 @@ function destructivelyRemoveFirstCat() {
     cats.shift();
 }
 
-function appendCat(name) {//spread or splice methods here
-    const newCats= [...cats];
-    console.log("This is the value of the new cats Array: ", newCats);
-    newCats.push(name);
+function appendCat(name) {
+    const newCats= [...cats];//cloned Array
+    console.log("This is the value of the new cats Array: ", newCats); 
+    newCats.push(name);//adds cat to end of cats cloned array
     return newCats;
-    //unable to figure out what method works i have tried 20 variations 
-    //doesn't matter if i try inside the function or outside, if use nested fuctions, or if i use.apply or if use .push
-
 }
 
 appendCat("Kwame");
 
 function prependCat(name) {
-    const newCatsOnTheBlock= [...cats];
+    const newCatsOnTheBlock= [...cats];//cloned array
     console.log("This is the value of the new cats Array: ", newCatsOnTheBlock);
-    newCatsOnTheBlock.unshift(name);
+    newCatsOnTheBlock.unshift(name);//adds cat to the beginning of the cats array 
     return newCatsOnTheBlock;
-    // why wont any of the arrays im creating become defined inside the functions 
-    //they dont register as arrays from outside the function 
-    // i cannot seem to create a new array inside the function 
 }
 
 prependCat("sylvester");
 
 function removeLastCat() {
-    const theseCatsGottaGo = [...cats];
-    theseCatsGottaGo.pop(name);
+    const theseCatsGottaGo = [...cats];//cloned array
+    theseCatsGottaGo.pop();//removes last cat from cloned array
     return theseCatsGottaGo;
 
 }
 function removeFirstCat() {
-    const catsCatsCats = [...cats];
-    catsCatsCats.shift();
+    const catsCatsCats = [...cats];//cloned array
+    catsCatsCats.shift();//removes first cat from cloned cats array
     return catsCatsCats;
 
  
